@@ -26,7 +26,7 @@ public class Identifier {
 
     /** Standard constructor */
     public Identifier(String domain, String path) {
-        this(new ResourceLocation(domain.toLowerCase(), path.toLowerCase()));
+        this(new ResourceLocation(domain.toLowerCase(Locale.US), path.toLowerCase(Locale.US)));
     }
 
     @Override
