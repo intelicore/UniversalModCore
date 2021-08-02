@@ -206,7 +206,7 @@ public class ModCore {
             GLFW.glfwMakeContextCurrent(window);
             GL.createCapabilities();
             int res = GL11.glGetInteger(GL11.GL_MAX_TEXTURE_SIZE);
-            GLFW.glfwDestroyWindow(window);
+            //GLFW.glfwDestroyWindow(window);
             return res;
         }
     }
