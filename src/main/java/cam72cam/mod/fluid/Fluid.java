@@ -1,12 +1,10 @@
 package cam72cam.mod.fluid;
 
+import cam72cam.mod.ModCore;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Fluid {
     public static final int BUCKET_VOLUME = 1000;
@@ -46,7 +44,11 @@ public class Fluid {
     }
 
     public static Fluid getFluid(net.minecraft.fluid.Fluid fluid) {
-        return getFluid(fluid.getRegistryName().getPath());
+        Fluid found = getFluid(fluid.getRegistryName().getPath());
+        if (found == null) {
+            ModCore.warn("Unregisterd fluid: %s, %s", fluid.getClass(), fluid.getRegistryName());
+        }
+        return found != null ? found : new Fluid(fluid.getRegistryName().getPath(), Collections.singletonList(fluid));
     }
 
     public int getDensity() {

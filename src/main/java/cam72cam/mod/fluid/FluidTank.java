@@ -68,7 +68,7 @@ public class FluidTank implements ITank {
 
     @Override
     public boolean allows(Fluid fluid) {
-        return (filter == null || filter.get() == null || filter.get().contains(fluid)) &&
+        return (filter == null || filter.get() == null || filter.get().contains(fluid)) && fluid != null &&
                 fluid.internal.stream().anyMatch(f -> internal.isFluidValid(new net.minecraftforge.fluids.FluidStack(f, 1)));
     }
 
