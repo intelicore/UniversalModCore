@@ -51,7 +51,14 @@ public class OBJTextureSheet {
             textureID = GL11.glGenTextures();
 
             try (OpenGL.With tex = OpenGL.texture(textureID)) {
-                TextureUtil.prepareImage(textureID, width, height);
+                //TextureUtil.prepareImage(textureID, width, height);
+                GL11.glPixelStorei(3312, 0);
+                GL11.glPixelStorei(3313, 0);
+                GL11.glPixelStorei(3314, 0);
+                GL11.glPixelStorei(3315, 0);
+                GL11.glPixelStorei(3316, 0);
+                GL11.glPixelStorei(3317, 4);
+
                 GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
                 GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
                 GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_S, GL12.GL_CLAMP_TO_EDGE);
