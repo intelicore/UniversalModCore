@@ -25,6 +25,8 @@ jobs:
               env:
                 MAVENCI: ${{ secrets.MAVENCI }}
               run: echo "${MAVENCI}" >> publish_key
+            - name: Gradle build
+              run: ./gradlew build -Dtarget=release
             - name: cleanup
               run: rm publish_key
             - uses: actions/upload-artifact@v2-preview
