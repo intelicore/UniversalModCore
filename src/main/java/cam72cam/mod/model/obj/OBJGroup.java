@@ -5,15 +5,15 @@ import cam72cam.mod.serialization.TagField;
 
 public class OBJGroup {
     @TagField
-    public final String name;
+    public String name;
     @TagField
-    public final int faceStart;
+    public int faceStart;
     @TagField
-    public final int faceStop;
+    public int faceStop;
     @TagField
-    public final Vec3d min;
+    public Vec3d min;
     @TagField
-    public final Vec3d max;
+    public Vec3d max;
 
     OBJGroup() {
         // Reflection
